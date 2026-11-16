@@ -61,3 +61,12 @@ We must be able to add/check off to-dos and set meals from our phones on the hom
 
 ### Network
 - Reach the Pi as machouse.local. Plan to set a DHCP reservation in the router. scp from Windows works.
+
+## Current setup (as built)
+- Code: `app/` (FastAPI: main.py API, db.py SQLite at data/dashboard.db, weather.py, calendars.py), `static/` (index.html, style.css, app.js).
+- Calendars + location live in `.env` (gitignored): CAL<n>_NAME / CAL<n>_COLOR / CAL<n>_URL.
+- Server: systemd *user* service `kitchen-dashboard` (deploy/kitchen-dashboard.service, symlinked into ~/.config/systemd/user). `systemctl --user restart kitchen-dashboard` after backend changes; front-end changes just need a page reload.
+- Kiosk: ~/.config/labwc/autostart (copy of deploy/labwc-autostart) runs deploy/kiosk.sh via lwrespawn → Chromium `--kiosk --ozone-platform=wayland --password-store=basic` at http://localhost:8000/?kiosk. (Without --password-store=basic Chromium hangs on the keyring; without --ozone-platform=wayland it fails looking for X11.)
+- Display rotated to portrait: ~/.config/kanshi/config (copy of deploy/kanshi.config), transform 90.
+- MagicMirror: stopped in pm2 (`pm2 stop MagicMirror && pm2 save`). Fallback: `pm2 start MagicMirror`.
+- Phones: http://machouse.local:8000 (or http://192.168.1.2:8000); `?kiosk` adds night-mode blanking + auto-return to Home.

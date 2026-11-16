@@ -1,0 +1,7 @@
+# Copy of Pi OS's default labwc autostart (/etc/xdg/labwc/autostart) + the kiosk.
+# Installed to ~/.config/labwc/autostart (a user file replaces the system one, so we keep its lines).
+/usr/bin/lwrespawn /usr/bin/pcmanfm-pi &
+/usr/bin/lwrespawn /usr/bin/wf-panel-pi &
+/usr/bin/kanshi &
+/usr/bin/lxsession-xdg-autostart
+/usr/bin/lwrespawn /home/ahmckeit/kitchen-dashboard/deploy/kiosk.sh &
