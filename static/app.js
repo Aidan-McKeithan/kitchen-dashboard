@@ -602,7 +602,15 @@ function updateNight() {
 
 let lastTouch = Date.now();
 if (KIOSK) {
-  document.body.classList.add("kiosk");
+  document.body.classList.add("kiosk", "hide-cursor");
+  // Show the mouse pointer while the mouse moves; hide it after 5 s still.
+  let cursorTimer;
+  document.addEventListener("pointermove", (ev) => {
+    if (ev.pointerType !== "mouse") return;
+    document.body.classList.remove("hide-cursor");
+    clearTimeout(cursorTimer);
+    cursorTimer = setTimeout(() => document.body.classList.add("hide-cursor"), 5000);
+  });
   ["pointerdown", "keydown"].forEach((t) => document.addEventListener(t, () => { lastTouch = Date.now(); }, true));
   $("#night").addEventListener("pointerdown", () => { state.nightWokenUntil = Date.now() + 120000; updateNight(); });
   // Drift back to Home after 2 minutes without a touch.

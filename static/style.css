@@ -254,5 +254,6 @@ code { background: var(--panel); padding: 0.15rem 0.4rem; border-radius: 0.4rem;
 #night { position: fixed; inset: 0; background: #000; z-index: 20; display: grid; place-items: center; cursor: none; }
 #night-clock { color: #1c2230; font-size: 3rem; font-weight: 700; }
 #toast { position: fixed; left: 50%; bottom: 6rem; transform: translateX(-50%); background: var(--danger); color: #1a0c0c; padding: 0.6rem 1rem; border-radius: 0.7rem; z-index: 30; font-weight: 600; }
-.kiosk { cursor: none; }
-.kiosk input, .kiosk textarea { cursor: text; }
+/* Kiosk: hide the mouse pointer only after it sits still for a few seconds
+   (app.js toggles .hide-cursor). Touch never shows it. */
+.kiosk.hide-cursor, .kiosk.hide-cursor * { cursor: none !important; }
