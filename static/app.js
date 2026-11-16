@@ -20,6 +20,9 @@ const state = {
   calMonth: new Date(new Date().getFullYear(), new Date().getMonth(), 1),
   calSelected: null,                                  // YYYY-MM-DD picked in the month grid
   monthEvents: { key: null, events: [] },             // events for the month on screen
+  photos: [],                                         // uploaded recipe-book photos
+  uploadMsg: "",                                      // "Uploading 3 of 12…"
+  showAllPhotos: false,
   weather: null,
   events: [],
   calendars: [],
@@ -140,7 +143,8 @@ async function loadEvents() {
     [state.events, state.calendars] = await Promise.all([api("/api/events?days=31"), api("/api/calendars")]);
   } catch (e) { console.warn("events", e); }
 }
-async function loadLocal() { await Promise.all([loadLists(), loadMeals(), loadSettings()]); }
+async function loadPhotos() { try { state.photos = await api("/api/recipe-photos"); } catch {} }
+async function loadLocal() { await Promise.all([loadLists(), loadMeals(), loadSettings(), loadPhotos()]); }
 
 // Ask the server "has anything changed?" — cheap, so we can do it often.
 async function pollRev() {
@@ -410,7 +414,56 @@ function mealsView() {
       <span class="m">${m ? esc(mealMeta(m)) : ""}</span></button>`;
   }
   return `<div class="page-h"><h2>Dinner plan</h2><span class="muted">Tap a day to edit</span></div>
-    <section class="card">${rows}</section>`;
+    <section class="card">${rows}</section>
+    ${photosCard()}`;
+}
+
+// Recipe-book photos: upload from phones, browse thumbnails, tap to view/delete.
+function photosCard() {
+  const all = state.photos.slice().reverse(); // newest first
+  const shown = state.showAllPhotos ? all : all.slice(0, 24);
+  return `<section class="card">
+    <div class="card-h"><h2>Recipe book photos</h2><span class="muted" style="font-size:.9rem">${all.length} uploaded</span></div>
+    ${KIOSK ? "" : `
+      <div class="muted" style="font-size:.9rem;margin-bottom:.7rem">Snap each recipe page (one recipe per photo, flat, good light) and upload them here. You can pick lots at once.</div>
+      <label class="btn primary wide">${icon("plus")} Upload photos
+        <input type="file" accept="image/*" multiple hidden data-upload></label>`}
+    ${state.uploadMsg ? `<div class="upload-msg">${esc(state.uploadMsg)}</div>` : ""}
+    ${all.length ? `<div class="thumbs">${shown.map((p) => `
+      <button class="thumb" data-action="view-photo" data-name="${esc(p.name)}" aria-label="View photo">
+        <img src="/recipe-photos/${esc(p.name)}?thumb=1" loading="lazy" alt=""></button>`).join("")}</div>` : ""}
+    ${all.length > 24 && !state.showAllPhotos ? `<button class="btn wide" style="margin-top:.6rem" data-action="all-photos">Show all ${all.length}</button>` : ""}
+  </section>`;
+}
+
+async function uploadPhotos(files) {
+  const list = [...files];
+  let ok = 0, failed = 0;
+  for (let i = 0; i < list.length; i++) {
+    state.uploadMsg = `Uploading ${i + 1} of ${list.length}…`;
+    render();
+    const fd = new FormData();
+    fd.append("file", list[i]);
+    try {
+      const res = await fetch("/api/recipe-photos", { method: "POST", body: fd });
+      if (!res.ok) throw new Error((await res.json()).detail || res.status);
+      ok++;
+    } catch (e) { failed++; console.warn("upload", list[i].name, e); }
+  }
+  state.uploadMsg = `Uploaded ${ok} photo${ok === 1 ? "" : "s"}` + (failed ? ` · ${failed} failed (try those again)` : " ✓");
+  await loadPhotos();
+  render();
+  setTimeout(() => { state.uploadMsg = ""; render(); }, 8000);
+}
+
+function photoViewer(name) {
+  openModal(`
+    <img class="photo-full" src="/recipe-photos/${esc(name)}" alt="Recipe photo">
+    <div class="actions">
+      ${KIOSK ? "" : `<button class="btn danger" data-action="delete-photo" data-name="${esc(name)}">${icon("trash")} Delete</button>`}
+      <span class="spacer"></span>
+      <button class="btn primary" data-action="close">Close</button>
+    </div>`);
 }
 
 function settingsView() {
@@ -554,6 +607,11 @@ document.addEventListener("click", (ev) => {
     case "recipe": recipeView(day); break;
     case "clear-meal": closeModal(); act(() => api(`/api/meals/${day}`, { method: "DELETE" })); break;
     case "close": closeModal(); break;
+    case "view-photo": photoViewer(el.dataset.name); break;
+    case "all-photos": state.showAllPhotos = true; render(); break;
+    case "delete-photo":
+      if (confirm("Delete this photo?")) { closeModal(); act(() => api(`/api/recipe-photos/${el.dataset.name}`, { method: "DELETE" })); }
+      break;
     case "goto": state.tab = el.dataset.tabTarget; render(); break;
     case "night-toggle":
       act(() => api("/api/settings", { method: "PUT", body: { night_enabled: state.settings.night_enabled === "1" ? "0" : "1" } }));
@@ -579,6 +637,7 @@ document.addEventListener("submit", (ev) => {
 });
 
 document.addEventListener("change", (ev) => {
+  if (ev.target.matches("[data-upload]") && ev.target.files.length) { uploadPhotos(ev.target.files); return; }
   const key = ev.target.dataset.setting;
   if (key && ev.target.value) act(() => api("/api/settings", { method: "PUT", body: { [key]: ev.target.value } }));
 });

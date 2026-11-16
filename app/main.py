@@ -18,7 +18,9 @@ from fastapi.responses import FileResponse  # noqa: E402
 from fastapi.staticfiles import StaticFiles  # noqa: E402
 from pydantic import BaseModel, Field, field_validator  # noqa: E402
 
-from . import calendars, db, weather  # noqa: E402
+from fastapi import File, UploadFile  # noqa: E402
+
+from . import calendars, db, photos, weather  # noqa: E402
 
 
 @asynccontextmanager
@@ -200,6 +202,44 @@ def set_meal(day: str, meal: MealIn):
 def clear_meal(day: str):
     _check_day(day)
     db.write("DELETE FROM meals WHERE day = ?", (day,))
+    return {"ok": True}
+
+
+# ---------- recipe photos ----------
+@app.post("/api/recipe-photos")
+def upload_recipe_photo(file: UploadFile = File(...)):
+    """One photo per request (the page uploads them one at a time to show progress)."""
+    try:
+        name = photos.save(file.file.read(photos.MAX_BYTES + 1))
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+    db.rev += 1  # let other screens know the photo list changed
+    return {"name": name}
+
+
+@app.get("/api/recipe-photos")
+def list_recipe_photos():
+    return photos.list_photos()
+
+
+@app.get("/recipe-photos/{name}", include_in_schema=False)
+def get_recipe_photo(name: str, thumb: bool = False):
+    try:
+        p = photos.path_for(name, thumb)
+    except ValueError:
+        raise HTTPException(404)
+    if not p.exists():
+        raise HTTPException(404)
+    return FileResponse(p, media_type="image/jpeg")
+
+
+@app.delete("/api/recipe-photos/{name}")
+def delete_recipe_photo(name: str):
+    try:
+        photos.delete(name)
+    except ValueError:
+        raise HTTPException(404)
+    db.rev += 1
     return {"ok": True}
 
 

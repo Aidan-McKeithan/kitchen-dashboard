@@ -1,6 +1,9 @@
 fastapi==0.163.1
 httpx==0.28.1
 icalendar==7.3.0
+pillow==13.0.0
+pillow_heif==1.8.1
 python-dotenv==1.2.4
+python-multipart==0.0.34
 recurring-ical-events==3.8.2
 uvicorn==0.54.0

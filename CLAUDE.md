@@ -69,6 +69,8 @@ We must be able to add/check off to-dos and set meals from our phones on the hom
 - Kiosk: ~/.config/labwc/autostart (copy of deploy/labwc-autostart) runs deploy/kiosk.sh via lwrespawn → Chromium `--kiosk --ozone-platform=wayland --password-store=basic` at http://localhost:8000/?kiosk. (Without --password-store=basic Chromium hangs on the keyring; without --ozone-platform=wayland it fails looking for X11.)
 - Display orientation: currently LANDSCAPE (waiting on a vertical mount). Switch with `deploy/rotate.sh portrait` or `deploy/rotate.sh landscape` — copies deploy/kanshi.<mode>.config to ~/.config/kanshi/config and applies it live. Portrait = transform 90 (use 270 if upside-down). The page layout adapts automatically to either.
 - MagicMirror: stopped in pm2 (`pm2 stop MagicMirror && pm2 save`). Fallback: `pm2 start MagicMirror`.
+- Recipe-book photos: uploaded from phones on the Meals tab -> data/recipe-photos/<name>.jpg (+ thumbs/). HEIC auto-converted to JPEG. NOT in git (data/ is ignored) and not backed up yet. Claude reads these directly to build structured recipes.
+- Siri: POST /api/lists/{grocery|todo}/quick-add {text} splits on commas/"and", skips duplicates, returns {message} for Siri to speak.
 - Phones: http://machouse.local:8000 (or http://192.168.1.2:8000); `?kiosk` adds night-mode blanking + auto-return to Home.
 - Linger enabled (`loginctl enable-linger ahmckeit`), so the user service runs even with no login session.
 - Tailscale installed on the Pi (MagicDNS on). Away access: http://machouse:8000 (Tailscale IP 100.77.138.81). Fiancée to be invited to the tailnet later.
