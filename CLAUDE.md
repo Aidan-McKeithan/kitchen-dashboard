@@ -72,3 +72,4 @@ We must be able to add/check off to-dos and set meals from our phones on the hom
 - Phones: http://machouse.local:8000 (or http://192.168.1.2:8000); `?kiosk` adds night-mode blanking + auto-return to Home.
 - Linger enabled (`loginctl enable-linger ahmckeit`), so the user service runs even with no login session.
 - Tailscale installed on the Pi (MagicDNS on). Away access: http://machouse:8000 (Tailscale IP 100.77.138.81). Fiancée to be invited to the tailnet later.
+- GitHub backup: private repo git@github.com:Aidan-McKeithan/kitchen-dashboard.git (Pi SSH key ~/.ssh/id_ed25519 added to GitHub). Push after each commit. .env and data/ are NOT in git.
