@@ -73,3 +73,11 @@ We must be able to add/check off to-dos and set meals from our phones on the hom
 - Linger enabled (`loginctl enable-linger ahmckeit`), so the user service runs even with no login session.
 - Tailscale installed on the Pi (MagicDNS on). Away access: http://machouse:8000 (Tailscale IP 100.77.138.81). Fiancée to be invited to the tailnet later.
 - GitHub backup: private repo git@github.com:Aidan-McKeithan/kitchen-dashboard.git (Pi SSH key ~/.ssh/id_ed25519 added to GitHub). Push after each commit. .env and data/ are NOT in git.
+
+## Open items / next steps (as of 2026-11-16)
+- Test a full reboot (`sudo reboot`): confirm server, kiosk, Tailscale come back and MagicMirror stays stopped.
+- Switch to portrait when the vertical mount arrives (`deploy/rotate.sh portrait`).
+- Ideas queued: recipe box + pick recipes in Meals + auto-generate weekly grocery list (ask what format Kaitlyn's recipe book is: physical/app/links);
+  nightly backup of data/dashboard.db; optional PIN; Google Calendar API if iCal delay is annoying.
+- Possible side business: install script + per-household settings in .env (location, names) so a family member's unit is quick to build.
+- Tailscale: Kaitlyn's phone (iphone-13) joined via auth key, listed under Aidan's account.
