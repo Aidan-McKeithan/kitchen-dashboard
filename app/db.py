@@ -59,6 +59,12 @@ def init() -> None:
     _con.row_factory = sqlite3.Row
     with _lock:
         _con.executescript(SCHEMA)
+        # Upgrades for databases created before these columns existed.
+        cols = {r[1] for r in _con.execute("PRAGMA table_info(meals)")}
+        if "recipe_id" not in cols:
+            _con.execute("ALTER TABLE meals ADD COLUMN recipe_id TEXT")
+        if "sides" not in cols:
+            _con.execute("ALTER TABLE meals ADD COLUMN sides TEXT")  # JSON list of recipe ids
         for k, v in DEFAULT_SETTINGS.items():
             _con.execute("INSERT OR IGNORE INTO settings(key, value) VALUES (?, ?)", (k, v))
         # Housekeeping once per start: forget items completed over a week ago.

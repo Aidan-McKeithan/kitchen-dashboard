@@ -1,0 +1,6 @@
+[Unit]
+Description=Back up recipe box to GitHub
+
+[Service]
+Type=oneshot
+ExecStart=%h/kitchen-dashboard/deploy/backup.sh

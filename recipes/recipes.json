@@ -1,0 +1,2227 @@
+{
+ "pantry": [
+  "ap flour",
+  "baking powder",
+  "baking soda",
+  "black pepper",
+  "cayenne pepper",
+  "chili powder",
+  "cornstarch",
+  "cumin",
+  "flour",
+  "garlic powder",
+  "italian seasoning",
+  "olive oil",
+  "onion powder",
+  "oregano",
+  "pepper",
+  "salt",
+  "salt & pepper",
+  "same as sourdough loaf (page 13)",
+  "smoked paprika",
+  "sourdough discard",
+  "sourdough starter",
+  "sugar",
+  "unfed sourdough discard",
+  "vanilla extract",
+  "white distilled vinegar"
+ ],
+ "recipes": [
+  {
+   "id": "homemade-hamburger-helper",
+   "title": "Homemade Hamburger Helper",
+   "section": "Dinner",
+   "page": 1,
+   "serves": "3",
+   "prep_min": 10,
+   "cook_min": 20,
+   "ingredients": [
+    {
+     "qty": "1",
+     "unit": "lb",
+     "item": "ground beef",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "",
+     "item": "onion",
+     "note": "diced",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tsp",
+     "item": "salt",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tsp",
+     "item": "onion powder",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tsp",
+     "item": "garlic powder",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "tsp",
+     "item": "black pepper",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "tbsp",
+     "item": "worcestershire sauce",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "tbsp",
+     "item": "tomato paste",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2 1/4",
+     "unit": "cup",
+     "item": "beef broth",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "cup",
+     "item": "elbow noodles",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "cup",
+     "item": "shredded cheese",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/3",
+     "unit": "cup",
+     "item": "heavy cream",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "cup",
+     "item": "sour cream",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Cook beef, onion, salt, onion & garlic powder and pepper on medium-high heat. Drain and add back to pot.",
+    "Add tomato paste and worcestershire, stir.",
+    "Add beef broth and uncooked pasta, bring to a boil.",
+    "Once boiling, cover and reduce to medium-low heat. Cook for 15 mins, stirring occasionally.",
+    "When pasta is cooked, stir in cheese, heavy cream and sour cream.",
+    "Season with salt to taste and serve."
+   ],
+   "notes": "",
+   "pairs_with": [],
+   "photo": "20261116-154246-5d3476.jpg",
+   "check": [
+    "The page shows 'lb ground beef', 'tsp salt', 'tsp onion powder', 'tsp garlic powder' with no number — I assumed 1 of each."
+   ]
+  },
+  {
+   "id": "crockpot-chicken-spaghetti",
+   "title": "Crockpot Chicken Spaghetti",
+   "section": "Dinner",
+   "page": 2,
+   "serves": "6",
+   "prep_min": 10,
+   "cook_min": 360,
+   "ingredients": [
+    {
+     "qty": "3",
+     "unit": "",
+     "item": "chicken breasts",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "10",
+     "unit": "oz",
+     "item": "can diced tomatoes",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "can",
+     "item": "cream of chicken soup",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "can",
+     "item": "cream of mushroom soup",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "",
+     "item": "onion",
+     "note": "diced",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "tsp",
+     "item": "minced garlic",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "tsp",
+     "item": "italian seasoning",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "4",
+     "unit": "oz",
+     "item": "cream cheese",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "cup",
+     "item": "shredded cheddar",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "16",
+     "unit": "oz",
+     "item": "thin spaghetti",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Add chicken, tomatoes, cream of chicken & mushroom soup, onion, garlic and italian seasoning to crockpot.",
+    "Cover and cook on low for 6–8 hrs.",
+    "Remove chicken (165°), shred and return.",
+    "Stir in cream cheese and cheddar cheese. Stir and cook for 20 mins until melted.",
+    "Cook spaghetti in a separate pot, then stir into crockpot."
+   ],
+   "notes": "You can keep spaghetti separate & add as wanted.",
+   "pairs_with": [],
+   "photo": "20261116-154244-cd719b.jpg",
+   "check": []
+  },
+  {
+   "id": "spinach-bacon-orzo",
+   "title": "Spinach Bacon Orzo",
+   "section": "Dinner",
+   "page": 3,
+   "serves": "6",
+   "prep_min": 10,
+   "cook_min": 20,
+   "ingredients": [
+    {
+     "qty": "6",
+     "unit": "piece",
+     "item": "bacon",
+     "note": "sliced",
+     "optional": false
+    },
+    {
+     "qty": "4",
+     "unit": "clove",
+     "item": "garlic",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "tsp",
+     "item": "italian seasoning",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "cup",
+     "item": "uncooked orzo",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "cup",
+     "item": "chicken broth",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "cup",
+     "item": "heavy cream",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "cup",
+     "item": "grated parmesan",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "cup",
+     "item": "baby spinach",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Salt & pepper",
+     "note": "to taste",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Cook cubed bacon in pot.",
+    "Add garlic, italian seasoning & orzo, leave bacon grease. Cook 2–3 mins, stir often.",
+    "Stir in chicken broth & heavy cream. Once boiling, cook for 10 mins on medium-low. Stir often.",
+    "Take pot off heat, stir in parmesan & spinach, cover for 3–5 mins. Season with salt & pepper."
+   ],
+   "notes": "If orzo is still hard I'll let it cook slightly longer & then stir in cheese & spinach.",
+   "pairs_with": [],
+   "photo": "20261116-154224-fa32fc.jpg",
+   "check": []
+  },
+  {
+   "id": "guacamole",
+   "title": "Guacamole",
+   "section": "Dip",
+   "page": 4,
+   "serves": "2-3",
+   "prep_min": 10,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "4-5",
+     "unit": "",
+     "item": "avocados",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "",
+     "item": "red onion",
+     "note": "small",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "",
+     "item": "roma tomatoes",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "handful",
+     "item": "cilantro",
+     "note": "fresh",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "",
+     "item": "limes",
+     "note": "juiced",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Salt",
+     "note": "to taste",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "",
+     "item": "jalapenos",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "clove",
+     "item": "garlic",
+     "note": "chopped",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Smash avocado with a fork.",
+    "Thinly cube rest of ingredients, add lime & salt.",
+    "Mix all together.",
+    "Serve with chips or on a meal."
+   ],
+   "notes": "Leave pit in guacamole to stay fresh longer.",
+   "pairs_with": [],
+   "photo": "20261116-154223-510ed3.jpg",
+   "check": []
+  },
+  {
+   "id": "mango-salsa",
+   "title": "Mango Salsa",
+   "section": "Dip",
+   "page": 5,
+   "serves": "4",
+   "prep_min": 10,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "1",
+     "unit": "",
+     "item": "large mango",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "cup",
+     "item": "onion",
+     "note": "diced",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "",
+     "item": "jalapeno",
+     "note": "small, chopped",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "cup",
+     "item": "cilantro",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1-2",
+     "unit": "",
+     "item": "limes",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Salt",
+     "note": "to taste",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Chop all ingredients & mix together.",
+    "Serve as dip or on chicken."
+   ],
+   "notes": "",
+   "pairs_with": [],
+   "photo": "20261116-154221-41f3dc.jpg",
+   "check": []
+  },
+  {
+   "id": "chicken-salad",
+   "title": "Chicken Salad",
+   "section": "Dinner",
+   "page": 6,
+   "serves": "3-4",
+   "prep_min": 30,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "3",
+     "unit": "",
+     "item": "chicken breasts",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "",
+     "item": "celery ribs",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "",
+     "item": "red apple",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Dijon mustard",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Yellow mustard",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "16",
+     "unit": "oz",
+     "item": "sweet relish",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Salt",
+     "note": "to taste",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Boil chicken breast to 160°.",
+    "Wash celery & apple, then blend in a food processor — when chicken is cooked, blend it as well.",
+    "Mix in rest of ingredients."
+   ],
+   "notes": "I add in dijon, yellow mustard, relish & salt to my preferred taste.",
+   "pairs_with": [],
+   "photo": "20261116-154154-08ecdf.jpg",
+   "check": [
+    "The table of contents section for this one is scribbled out — is it Dinner, Lunch or Dip?"
+   ]
+  },
+  {
+   "id": "chicken-noodle-soup",
+   "title": "Chicken Noodle Soup",
+   "section": "Soup",
+   "page": 7,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "1 1/2",
+     "unit": "lb",
+     "item": "chicken thighs",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Salt & pepper",
+     "note": "to taste",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tbsp",
+     "item": "olive oil",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "8",
+     "unit": "cup",
+     "item": "chicken broth",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "",
+     "item": "onion",
+     "note": "chopped",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "",
+     "item": "carrot",
+     "note": "peeled & chopped",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "",
+     "item": "celery rib",
+     "note": "chopped",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "sprig",
+     "item": "thyme",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "",
+     "item": "bay leaf",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "5",
+     "unit": "oz",
+     "item": "thin spaghetti",
+     "note": "broken in 1 inch pieces",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tbsp",
+     "item": "fresh parsley",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Pat chicken dry, season with salt & pepper. On medium-high heat add oil to pot & cook chicken 8–10 mins.",
+    "While chicken cooks, cut up vegetables, then add to pot. Add thyme, bay leaf and chicken broth. Simmer 15 mins — check chicken for 165–170°, take out & shred.",
+    "Fish out thyme & bay leaf, add broken noodles & boil for 10 mins.",
+    "When noodles are done add chicken & fresh parsley. Season with salt & pepper, serve."
+   ],
+   "notes": "",
+   "pairs_with": [],
+   "photo": "20261116-154152-583e44.jpg",
+   "check": [
+    "Olive oil and parsley say 'tbsp' with no number — I assumed 1 tbsp each."
+   ]
+  },
+  {
+   "id": "philly-cheesesteaks",
+   "title": "Philly Cheesesteaks",
+   "section": "Dinner",
+   "page": 8,
+   "serves": null,
+   "prep_min": 10,
+   "cook_min": 10,
+   "ingredients": [
+    {
+     "qty": "1",
+     "unit": "lb",
+     "item": "ground beef or shaved steak",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "",
+     "item": "yellow onion",
+     "note": "diced",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "",
+     "item": "green pepper",
+     "note": "diced",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "tsp",
+     "item": "salt",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tbsp",
+     "item": "cornstarch",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "cup",
+     "item": "beef broth",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "cup",
+     "item": "A1 sauce",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Sliced cheddar cheese",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Buns",
+     "note": "homemade or store bought",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Over medium heat cook beef, onion, pepper & salt. Drain.",
+    "Add cornstarch & mix until beef is coated. Add beef broth, A1 sauce & stir, bring to a boil.",
+    "Once boiling, reduce to simmer & stir occasionally for 10 mins. Once thickened, remove from heat.",
+    "While beef is simmering, set oven to broil. Broil buns & butter, add cheese then broil a few more mins.",
+    "Combine everything & serve."
+   ],
+   "notes": "",
+   "pairs_with": [],
+   "photo": "20261116-154151-cfeb9b.jpg",
+   "check": []
+  },
+  {
+   "id": "buttermilk-biscuits",
+   "title": "Buttermilk Biscuits",
+   "section": "Breakfast",
+   "page": 9,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "3",
+     "unit": "cup",
+     "item": "flour",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "5",
+     "unit": "tsp",
+     "item": "baking powder",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1 1/2",
+     "unit": "tsp",
+     "item": "salt",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "tsp",
+     "item": "baking soda",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "cup",
+     "item": "cold butter",
+     "note": "chopped",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Heavy cream",
+     "note": "to brush tops",
+     "optional": false
+    },
+    {
+     "qty": "1-1",
+     "unit": "",
+     "item": "1/4 cup buttermilk",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Preheat oven to 450° & line sheet.",
+    "Whisk together flour, baking powder, salt & baking soda.",
+    "Crumble butter to pea size & mix into mixture.",
+    "Mix in buttermilk, knead dough & cut with cookie cutter. (Roll out first!)",
+    "Place on baking sheet, brush with heavy cream, cook for 13–15 mins."
+   ],
+   "notes": "",
+   "pairs_with": [],
+   "photo": "20261116-154122-412bf9.jpg",
+   "check": []
+  },
+  {
+   "id": "sourdough-blueberry-muffins",
+   "title": "Sourdough Blueberry Muffins",
+   "section": "Breakfast",
+   "page": 10,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "1",
+     "unit": "cup",
+     "item": "unfed sourdough discard",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1 1/2",
+     "unit": "cup",
+     "item": "ap flour",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "cup",
+     "item": "sugar",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "tsp",
+     "item": "baking powder",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "tsp",
+     "item": "baking soda",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "tsp",
+     "item": "salt",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tsp",
+     "item": "vanilla extract",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "cup",
+     "item": "milk",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "",
+     "item": "egg",
+     "note": "or sub 1/4 cup applesauce",
+     "optional": false
+    },
+    {
+     "qty": "1/3",
+     "unit": "cup",
+     "item": "butter",
+     "note": "melted",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "cup",
+     "item": "blueberries",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Preheat oven to 375°.",
+    "Line muffin tins.",
+    "Mix flour, sugar, baking powder, baking soda and salt.",
+    "In another bowl, mix discard, milk, egg (or sub), butter and vanilla.",
+    "Combine wet & dry ingredients & fold in blueberries.",
+    "Divide batter into 10–12 muffin cups.",
+    "Bake 18–22 mins or until tops are golden & a toothpick comes out clean. Cool in pan 5 mins, then cool on a rack fully."
+   ],
+   "notes": "",
+   "pairs_with": [],
+   "photo": "20261116-154121-82353c.jpg",
+   "check": []
+  },
+  {
+   "id": "meatballs",
+   "title": "Meatballs",
+   "section": "Dinner",
+   "page": 11,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "1",
+     "unit": "lb",
+     "item": "ground beef",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "cup",
+     "item": "breadcrumbs",
+     "note": "or blended pretzels",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "cup",
+     "item": "milk",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "",
+     "item": "egg",
+     "note": "or sub 1/4 cup sour cream",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "",
+     "item": "onion",
+     "note": "chopped",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "clove",
+     "item": "garlic",
+     "note": "minced",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "cup",
+     "item": "grated parmesan",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tbsp",
+     "item": "parsley",
+     "note": "dry or fresh",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tsp",
+     "item": "salt",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "tsp",
+     "item": "black pepper",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "tsp",
+     "item": "onion powder",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Preheat oven to 400°F.",
+    "Line pan with parchment paper.",
+    "Mix breadcrumbs & milk (sit 2 mins).",
+    "Add the rest of the ingredients, mix.",
+    "Add the ground beef, don't overmix.",
+    "Shape into 1–1½ inch balls; makes 16–20 meatballs.",
+    "Bake 18–20 mins or until 160°F."
+   ],
+   "notes": "Serve with brown gravy & mashed potatoes.",
+   "pairs_with": [
+    "mashed-potatoes"
+   ],
+   "photo": "20261116-154121-264e6f.jpg",
+   "check": []
+  },
+  {
+   "id": "mashed-potatoes",
+   "title": "Mashed Potatoes",
+   "section": "Side",
+   "page": 12,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "4",
+     "unit": "",
+     "item": "medium russet potatoes",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "3",
+     "unit": "tbsp",
+     "item": "butter",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tsp",
+     "item": "salt",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "tsp",
+     "item": "black pepper",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "cup",
+     "item": "heavy cream",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Fill a pot with water, heat, place cut potatoes in to boil.",
+    "Once potatoes are soft, drain well.",
+    "Add butter & mash potatoes.",
+    "Add rest of ingredients, serve hot."
+   ],
+   "notes": "I cut potatoes in bigger pieces. Pair with brown gravy.",
+   "pairs_with": [],
+   "photo": "20261116-154052-40fa17.jpg",
+   "check": []
+  },
+  {
+   "id": "sourdough-loaf",
+   "title": "Sourdough Loaf",
+   "section": "Bread",
+   "page": 13,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "475",
+     "unit": "g",
+     "item": "ap flour",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "325",
+     "unit": "g",
+     "item": "filtered water",
+     "note": "warm",
+     "optional": false
+    },
+    {
+     "qty": "100",
+     "unit": "g",
+     "item": "sourdough starter",
+     "note": "fed (equal parts starter, bread flour, water ~4 hours earlier)",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "After starter is fed & rose for 4 hours, mix ingredients into dough.",
+    "Cover & sit for 20 mins, then do stretch & folds every 20 mins for 1 hour 20 mins (4 sets).",
+    "Cover bowl, make sure dough is in a warm environment, sit for 5 hours. Shape & put in banneton.",
+    "Place in bag (remove air), in fridge overnight.",
+    "Next morning, preheat dutch oven at 500°F for an hour. Dough out of fridge & shape again in banneton.",
+    "Score, bake at 500°F for 25 mins & 475°F for 20 mins.",
+    "Let cool completely.",
+    "Slice & freeze in 7 days."
+   ],
+   "notes": "",
+   "pairs_with": [],
+   "photo": "20261116-154052-6c5354.jpg",
+   "check": [
+    "Step 6: the second oven temperature is written over — 475°F or 485°F?",
+    "Step 8 reads 'slice & freeze in 7 days' — meaning freeze within 7 days?"
+   ]
+  },
+  {
+   "id": "sandwich-sourdough-loaf",
+   "title": "Sandwich Sourdough Loaf",
+   "section": "Bread",
+   "page": 14,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Same as Sourdough Loaf (page 13)",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Follow the regular sourdough recipe; when baking, place in the sandwich dutch oven.",
+    "Preheat dutch oven at 475°F for an hour.",
+    "Bake at 475°F for 25 mins, covered.",
+    "Then 450°F for 20 mins, covered."
+   ],
+   "notes": "",
+   "pairs_with": [
+    "sourdough-loaf"
+   ],
+   "photo": "20261116-154051-e743c6.jpg",
+   "check": []
+  },
+  {
+   "id": "chicken-crispy-rice",
+   "title": "Chicken Crispy Rice",
+   "section": "Dinner",
+   "page": 15,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Chicken breast",
+     "note": "grilled & creole seasoned",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Cooked rice",
+     "note": "2 cups per serving",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "tbsp",
+     "item": "soy sauce",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tsp",
+     "item": "chili oil",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Cucumber",
+     "note": "cut",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "cup",
+     "item": "egg-free mayo",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "tbsp",
+     "item": "sweet chili thai sauce",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tbsp",
+     "item": "sriracha",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Dash of water",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Preheat oven to 350°F.",
+    "Line pan with parchment paper.",
+    "Mix rice (2 cups), soy sauce and chili oil.",
+    "Place rice on baking sheet, bake for 10–15 mins.",
+    "Prep cucumber & sauce (mayo, sweet chili sauce, sriracha, water).",
+    "Serve hot!"
+   ],
+   "notes": "",
+   "pairs_with": [],
+   "photo": "20261116-154050-c7f7e5.jpg",
+   "check": [
+    "Chili oil looks like it was changed between tsp and tbsp — which is right?"
+   ]
+  },
+  {
+   "id": "chicken-alfredo",
+   "title": "Chicken Alfredo",
+   "section": "Dinner",
+   "page": 16,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Chicken breast",
+     "note": "grilled & creole seasoned",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Fettuccine noodles",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "3",
+     "unit": "tbsp",
+     "item": "butter",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "cup",
+     "item": "heavy cream",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "4",
+     "unit": "clove",
+     "item": "garlic",
+     "note": "minced",
+     "optional": false
+    },
+    {
+     "qty": "1 1/2",
+     "unit": "cup",
+     "item": "grated parmesan",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Salt & pepper",
+     "note": "to taste",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Boil fettuccine noodles & drain well.",
+    "Melt butter, add garlic for 2 mins.",
+    "Add 1 cup heavy cream.",
+    "Simmer, then add parmesan.",
+    "Add noodles to sauce.",
+    "Serve!"
+   ],
+   "notes": "Serve with sourdough toast.",
+   "pairs_with": [],
+   "photo": "20261116-154049-9b2a8a.jpg",
+   "check": []
+  },
+  {
+   "id": "french-onion-chicken",
+   "title": "French Onion Chicken",
+   "section": "Dinner",
+   "page": 17,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "1",
+     "unit": "lb",
+     "item": "chicken thighs",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "",
+     "item": "onion",
+     "note": "chopped",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "packet",
+     "item": "french onion soup mix",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "cup",
+     "item": "beef broth",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Salt & pepper",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Season raw chicken with salt & pepper.",
+    "In a skillet, add oil and heat. Add chicken and sear both sides until brown (don't cook fully).",
+    "Take the seared chicken out and set aside. Add chopped onion and cook until soft.",
+    "Add french onion packet & beef broth, bring to a simmer.",
+    "Add chicken back to pan, cook until 165°."
+   ],
+   "notes": "Pair with rice.",
+   "pairs_with": [],
+   "photo": "20261116-154048-78c35f.jpg",
+   "check": []
+  },
+  {
+   "id": "bbq-chicken-with-pico",
+   "title": "BBQ Chicken with Pico",
+   "section": "Dinner",
+   "page": 18,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Chicken breast",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "BBQ sauce",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Salt & pepper",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Prepare grill for grilling.",
+    "Season chicken with salt & pepper.",
+    "Grill chicken; after 1st flip baste with BBQ sauce. After cooked fully (165°) baste other side with BBQ sauce.",
+    "Top with Pico de Gallo (page 27)."
+   ],
+   "notes": "Pair with roasted potatoes.",
+   "pairs_with": [
+    "pico-de-gallo"
+   ],
+   "photo": "20261116-154026-ac76b6.jpg",
+   "check": []
+  },
+  {
+   "id": "korean-beef",
+   "title": "Korean Beef",
+   "section": "Dinner",
+   "page": 19,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "1",
+     "unit": "lb",
+     "item": "ground beef",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1-2",
+     "unit": "clove",
+     "item": "garlic",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "cup",
+     "item": "brown sugar",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "cup",
+     "item": "soy sauce",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Heat oil in a skillet.",
+    "Add minced garlic, sauté for 2 minutes.",
+    "Add beef, cook until browned.",
+    "Add brown sugar and soy sauce.",
+    "Simmer until sugar is dissolved."
+   ],
+   "notes": "Pair with rice.",
+   "pairs_with": [],
+   "photo": "20261116-154025-fca586.jpg",
+   "check": []
+  },
+  {
+   "id": "egg-roll-in-a-bowl",
+   "title": "Egg Roll in a Bowl",
+   "section": "Dinner",
+   "page": 20,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "1 1/2",
+     "unit": "lb",
+     "item": "ground beef",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "",
+     "item": "onion",
+     "note": "diced",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tbsp",
+     "item": "minced garlic",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "16",
+     "unit": "oz",
+     "item": "coleslaw mix",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "tsp",
+     "item": "garlic powder",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "tsp",
+     "item": "onion powder",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "cup",
+     "item": "soy sauce",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Cook ground beef, drain grease, return to stove.",
+    "Add onions and garlic, cook until soft.",
+    "Add rest of ingredients, reduce heat, simmer for 5 minutes, serve."
+   ],
+   "notes": "",
+   "pairs_with": [],
+   "photo": "20261116-154024-5bb318.jpg",
+   "check": []
+  },
+  {
+   "id": "mississippi-pot-roast-chicken",
+   "title": "Mississippi Pot Roast (Chicken)",
+   "section": "Dinner",
+   "page": 21,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": 420,
+   "ingredients": [
+    {
+     "qty": "4",
+     "unit": "",
+     "item": "chicken breasts",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "cup",
+     "item": "pepperoncini",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "packet",
+     "item": "ranch",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "packet",
+     "item": "brown gravy",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "4",
+     "unit": "tbsp",
+     "item": "butter",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Pepperoncini juice",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "block",
+     "item": "cream cheese",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Spaghetti noodles",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "To a crockpot, add chicken, pepperoncini, ranch, gravy, butter and juice.",
+    "Cook on low for 6–8 hours, add cream cheese until melted.",
+    "Boil spaghetti noodles, serve."
+   ],
+   "notes": "",
+   "pairs_with": [],
+   "photo": "20261116-154023-931355.jpg",
+   "check": []
+  },
+  {
+   "id": "chipotle-chicken-bowls",
+   "title": "Chipotle Chicken Bowls",
+   "section": "Dinner",
+   "page": 22,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "2",
+     "unit": "",
+     "item": "chicken breasts",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "3",
+     "unit": "tbsp",
+     "item": "olive oil",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tbsp",
+     "item": "white distilled vinegar",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tsp",
+     "item": "chili powder",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tsp",
+     "item": "oregano",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tsp",
+     "item": "smoked paprika",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tsp",
+     "item": "salt",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "tsp",
+     "item": "cumin",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "tsp",
+     "item": "garlic powder",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "tsp",
+     "item": "black pepper",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "tsp",
+     "item": "cayenne pepper",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Cut chicken into thin pieces; with smooth side of meat mallet, beat to ½ inch.",
+    "Whisk olive oil, vinegar and spices.",
+    "Place chicken and marinade in a sealed ziplock bag, refrigerate 1–8 hours.",
+    "Grill or pan sear until 165°, rest for 5 mins, cut into bite-sized cubes."
+   ],
+   "notes": "Serve with cilantro lime rice (23), pico de gallo (27), guacamole (4), corn salsa (28) & any additional toppings.",
+   "pairs_with": [
+    "cilantro-lime-rice",
+    "pico-de-gallo",
+    "guacamole",
+    "corn-salsa"
+   ],
+   "photo": "20261116-154023-d941e0.jpg",
+   "check": []
+  },
+  {
+   "id": "cilantro-lime-rice",
+   "title": "Cilantro Lime Rice",
+   "section": "Side",
+   "page": 23,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "2",
+     "unit": "tbsp",
+     "item": "olive oil",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1 1/2",
+     "unit": "cup",
+     "item": "rice",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "tsp",
+     "item": "salt",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "3",
+     "unit": "cup",
+     "item": "chicken broth",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "",
+     "item": "lime",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "3/4",
+     "unit": "cup",
+     "item": "cilantro",
+     "note": "chopped",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Heat oil, rice and salt in a skillet and toast 4–5 minutes. Add broth and bring to a boil.",
+    "Reduce heat to low, cover, simmer 20 mins.",
+    "Remove from heat, stir in lime juice and cilantro. Serve."
+   ],
+   "notes": "",
+   "pairs_with": [],
+   "photo": "20261116-154022-ee5312.jpg",
+   "check": []
+  },
+  {
+   "id": "honey-glazed-salmon",
+   "title": "Honey Glazed Salmon",
+   "section": "Dinner",
+   "page": 24,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "4",
+     "unit": "piece",
+     "item": "salmon fillet",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "tsp",
+     "item": "salt",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "tsp",
+     "item": "black pepper",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "tsp",
+     "item": "garlic powder",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "cup",
+     "item": "butter",
+     "note": "for the glaze",
+     "optional": false
+    },
+    {
+     "qty": "5",
+     "unit": "clove",
+     "item": "garlic",
+     "note": "minced, for the glaze",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "cup",
+     "item": "honey",
+     "note": "for the glaze",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "cup",
+     "item": "soy sauce",
+     "note": "for the glaze",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Preheat oven to 425°, line baking sheet with parchment.",
+    "In a skillet, combine glaze ingredients.",
+    "Season salmon, pour glaze on salmon.",
+    "Bake salmon for 12 mins or until fully cooked.",
+    "Spoon any pan sauce over salmon. Serve."
+   ],
+   "notes": "Serve with rice.",
+   "pairs_with": [],
+   "photo": "20261116-153808-dd9fbc.jpg",
+   "check": []
+  },
+  {
+   "id": "cheeseburger-sliders",
+   "title": "Cheeseburger Sliders",
+   "section": "Dinner",
+   "page": 25,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Hawaiian rolls",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "lb",
+     "item": "ground beef",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Cheddar cheese slices",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Garlic powder",
+     "note": "to taste",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Onion powder",
+     "note": "to taste",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Salt & pepper",
+     "note": "to taste",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Butter",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Preheat oven to 350°.",
+    "Cut hawaiian rolls in half, take top part and place aside. Cheese on bottom roll.",
+    "Cook beef, season, drain grease.",
+    "Place beef on rolls, add cheese to top.",
+    "Put top roll on top, add butter on top of each piece.",
+    "Bake until rolls are browned."
+   ],
+   "notes": "Pair with roasted potatoes.",
+   "pairs_with": [],
+   "photo": "20261116-153807-85baa9.jpg",
+   "check": []
+  },
+  {
+   "id": "sourdough-pizza",
+   "title": "Sourdough Pizza",
+   "section": "Dinner",
+   "page": 26,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "1/2",
+     "unit": "cup",
+     "item": "sourdough discard",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1 1/2",
+     "unit": "cup",
+     "item": "ap flour",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "tsp",
+     "item": "salt",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tsp",
+     "item": "baking powder",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "tbsp",
+     "item": "olive oil",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/3",
+     "unit": "cup",
+     "item": "water",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Pizza sauce",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Italian seasoning",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Mozzarella cheese",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Pepperoni",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Pineapple",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Black olives",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Peppers",
+     "note": "or other favorite toppings",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Preheat oven to 450°.",
+    "Mix discard, flour, salt, baking powder, olive oil. Add water gradually and mix until dough forms — tacky, not sticky.",
+    "Flour surface, place dough on it, knead 1–2 mins.",
+    "Roll to desired thickness, place on parchment paper, brush with olive oil, add toppings.",
+    "Bake 12–15 mins, or until crispy."
+   ],
+   "notes": "",
+   "pairs_with": [],
+   "photo": "20261116-153806-317e43.jpg",
+   "check": []
+  },
+  {
+   "id": "pico-de-gallo",
+   "title": "Pico de Gallo",
+   "section": "Topping",
+   "page": 27,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "2",
+     "unit": "",
+     "item": "roma tomatoes",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "",
+     "item": "jalapenos",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "handful",
+     "item": "cilantro",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "cup",
+     "item": "red onion",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "",
+     "item": "limes",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Chop & mix ingredients together."
+   ],
+   "notes": "",
+   "pairs_with": [],
+   "photo": "20261116-153806-082783.jpg",
+   "check": []
+  },
+  {
+   "id": "corn-salsa",
+   "title": "Corn Salsa",
+   "section": "Topping",
+   "page": 28,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "16",
+     "unit": "oz",
+     "item": "sweet corn",
+     "note": "frozen",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "cup",
+     "item": "red onion",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "",
+     "item": "jalapeno",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "",
+     "item": "lime",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "tsp",
+     "item": "salt",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "cup",
+     "item": "cilantro",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Mix all ingredients."
+   ],
+   "notes": "",
+   "pairs_with": [],
+   "photo": "20261116-153805-b1eca8.jpg",
+   "check": [
+    "Salt is written over — 1/4 tsp or 1/2 tsp?"
+   ]
+  },
+  {
+   "id": "chicken-gravy",
+   "title": "Chicken & Gravy",
+   "section": "Dinner",
+   "page": 29,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "2",
+     "unit": "",
+     "item": "chicken breasts",
+     "note": "large",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tbsp",
+     "item": "olive oil",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Salt & pepper",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "3",
+     "unit": "tbsp",
+     "item": "butter",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tbsp",
+     "item": "chicken base",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "4",
+     "unit": "tbsp",
+     "item": "ap flour",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Onion powder",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Garlic powder",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "cup",
+     "item": "chicken broth",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/2",
+     "unit": "cup",
+     "item": "water",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "cup",
+     "item": "heavy cream",
+     "note": "",
+     "optional": true
+    }
+   ],
+   "steps": [
+    "Pan sear chicken, set aside.",
+    "Add butter & melt, add base.",
+    "Add flour & cook for a few minutes.",
+    "Add broth & whisk.",
+    "Add the rest & let simmer for a few mins."
+   ],
+   "notes": "",
+   "pairs_with": [],
+   "photo": "20261116-153758-c5fab1.jpg",
+   "check": [
+    "Chicken base: the '1' has a flourish — 1 tbsp or 2 tbsp?"
+   ]
+  }
+ ]
+}

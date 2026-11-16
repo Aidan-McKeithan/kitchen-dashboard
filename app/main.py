@@ -4,6 +4,7 @@ Run:  .venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
 Serves the page in ../static and a small JSON API under /api.
 """
 import datetime as dt
+import json
 import re
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -20,12 +21,13 @@ from pydantic import BaseModel, Field, field_validator  # noqa: E402
 
 from fastapi import File, UploadFile  # noqa: E402
 
-from . import calendars, db, photos, weather  # noqa: E402
+from . import calendars, db, photos, recipes, weather  # noqa: E402
 
 
 @asynccontextmanager
 async def lifespan(_app):
     db.init()
+    recipes.load()
     yield
 
 
@@ -163,6 +165,8 @@ class MealIn(BaseModel):
     cook_min: int | None = Field(default=None, ge=0, le=1440)
     url: str | None = Field(default=None, max_length=500)
     recipe: str | None = Field(default=None, max_length=5000)
+    recipe_id: str | None = Field(default=None, max_length=80)   # from the recipe box
+    sides: list[str] = Field(default_factory=list, max_length=10)  # recipe ids served alongside
 
     @field_validator("url")
     @classmethod
@@ -185,15 +189,21 @@ def get_meals(start: str | None = None, days: int = 7):
     first = dt.date.fromisoformat(start) if start else dt.date.today()
     last = first + dt.timedelta(days=max(1, min(days, 62)) - 1)
     rows = db.query("SELECT * FROM meals WHERE day BETWEEN ? AND ?", (first.isoformat(), last.isoformat()))
+    for r in rows:
+        r["sides"] = json.loads(r["sides"] or "[]")
     return {r["day"]: r for r in rows}
 
 
 @app.put("/api/meals/{day}")
 def set_meal(day: str, meal: MealIn):
     _check_day(day)
+    for rid in [meal.recipe_id, *meal.sides]:
+        if rid and not recipes.get(rid):
+            raise HTTPException(400, f"unknown recipe {rid}")
     db.write(
-        "INSERT OR REPLACE INTO meals(day, name, prep_min, cook_min, url, recipe) VALUES (?,?,?,?,?,?)",
-        (day, meal.name.strip(), meal.prep_min, meal.cook_min, meal.url, meal.recipe),
+        "INSERT OR REPLACE INTO meals(day, name, prep_min, cook_min, url, recipe, recipe_id, sides) VALUES (?,?,?,?,?,?,?,?)",
+        (day, meal.name.strip(), meal.prep_min, meal.cook_min, meal.url, meal.recipe,
+         meal.recipe_id, json.dumps(meal.sides)),
     )
     return {"ok": True}
 
@@ -203,6 +213,109 @@ def clear_meal(day: str):
     _check_day(day)
     db.write("DELETE FROM meals WHERE day = ?", (day,))
     return {"ok": True}
+
+
+# ---------- recipe box ----------
+class RecipeIn(BaseModel):
+    title: str = Field(min_length=1, max_length=100)
+    section: str = Field(default="Dinner", max_length=30)
+    page: int | None = Field(default=None, ge=0, le=9999)
+    serves: str | None = Field(default=None, max_length=20)
+    prep_min: int | None = Field(default=None, ge=0, le=2880)
+    cook_min: int | None = Field(default=None, ge=0, le=2880)
+    ingredients_text: str = Field(default="", max_length=5000)   # one ingredient per line
+    steps_text: str = Field(default="", max_length=10000)        # one step per line
+    notes: str = Field(default="", max_length=2000)
+
+
+def _recipe_fields(body: RecipeIn) -> dict:
+    steps = [re.sub(r"^\s*\d+[.)]\s*", "", line).strip() for line in body.steps_text.splitlines()]
+    return {
+        "title": body.title.strip(),
+        "section": body.section.strip() or "Dinner",
+        "page": body.page,
+        "serves": (body.serves or "").strip() or None,
+        "prep_min": body.prep_min,
+        "cook_min": body.cook_min,
+        "ingredients": [i for i in map(recipes.parse_line, body.ingredients_text.splitlines()) if i],
+        "steps": [st for st in steps if st],
+        "notes": body.notes.strip(),
+    }
+
+
+@app.get("/api/recipes")
+def list_recipes():
+    data = recipes.all_data()
+    return {"sections": recipes.SECTIONS, "pantry": data["pantry"], "recipes": data["recipes"]}
+
+
+@app.post("/api/recipes")
+def create_recipe(body: RecipeIn):
+    r = recipes.upsert(None, _recipe_fields(body))
+    db.rev += 1
+    return r
+
+
+@app.put("/api/recipes/{rid}")
+def update_recipe(rid: str, body: RecipeIn):
+    if not recipes.get(rid):
+        raise HTTPException(404)
+    r = recipes.upsert(rid, {**_recipe_fields(body), "check": []})  # saving = reviewed
+    db.rev += 1
+    return r
+
+
+@app.delete("/api/recipes/{rid}")
+def delete_recipe(rid: str):
+    recipes.delete(rid)
+    db.rev += 1
+    return {"ok": True}
+
+
+@app.post("/api/recipes/{rid}/checked")
+def recipe_checked(rid: str):
+    recipes.clear_check(rid)
+    db.rev += 1
+    return {"ok": True}
+
+
+class PantryIn(BaseModel):
+    items: list[str] = Field(max_length=300)
+
+
+@app.put("/api/pantry")
+def put_pantry(body: PantryIn):
+    recipes.set_pantry([i[:60] for i in body.items])
+    db.rev += 1
+    return {"pantry": recipes.all_data()["pantry"]}
+
+
+@app.get("/api/groceries/preview")
+def grocery_preview(start: str | None = None, days: int = 7):
+    first = dt.date.fromisoformat(start) if start else dt.date.today()
+    last = first + dt.timedelta(days=max(1, min(days, 31)) - 1)
+    meals = db.query("SELECT * FROM meals WHERE day BETWEEN ? AND ?", (first.isoformat(), last.isoformat()))
+    on_list = {r["text"].lower() for r in db.query("SELECT text FROM items WHERE list = 'grocery' AND done = 0")}
+    planned = sum(1 for m in meals if m["recipe_id"])
+    return {"planned": planned, "items": recipes.grocery_preview(meals, on_list)}
+
+
+class BulkIn(BaseModel):
+    items: list[str] = Field(max_length=200)
+
+
+@app.post("/api/lists/{name}/bulk")
+def bulk_add(name: str, body: BulkIn):
+    _check_list(name)
+    existing = {r["text"].lower() for r in db.query("SELECT text FROM items WHERE list = ? AND done = 0", (name,))}
+    added = 0
+    for text in body.items:
+        t = text.strip()[:200]
+        if t and t.lower() not in existing:
+            db.write("INSERT INTO items(list, text) VALUES (?, ?)", (name, t))
+            existing.add(t.lower())
+            added += 1
+    return {"added": added}
 
 
 # ---------- recipe photos ----------

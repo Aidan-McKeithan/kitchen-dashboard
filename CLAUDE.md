@@ -70,6 +70,7 @@ We must be able to add/check off to-dos and set meals from our phones on the hom
 - Display orientation: currently LANDSCAPE (waiting on a vertical mount). Switch with `deploy/rotate.sh portrait` or `deploy/rotate.sh landscape` — copies deploy/kanshi.<mode>.config to ~/.config/kanshi/config and applies it live. Portrait = transform 90 (use 270 if upside-down). The page layout adapts automatically to either.
 - MagicMirror: stopped in pm2 (`pm2 stop MagicMirror && pm2 save`). Fallback: `pm2 start MagicMirror`.
 - Recipe-book photos: uploaded from phones on the Meals tab -> data/recipe-photos/<name>.jpg (+ thumbs/). HEIC auto-converted to JPEG. NOT in git (data/ is ignored) and not backed up yet. Claude reads these directly to build structured recipes.
+- Recipe box: recipes/recipes.json (IN git, backed up nightly 2:30 AM by deploy/backup.sh via kitchen-backup.timer). 29 recipes transcribed from Kaitlyn's book (page photos in data/recipe-photos); ingredients stored as {qty, unit, item, note, optional}; `check` = things for her to verify; `pairs_with` = linked sides. app/recipes.py parses ingredient lines and builds the combined grocery list (pantry staples excluded). Meals can link recipe_id + sides. UI: Meals tab = Plan | Recipes; deep links /#recipe/<id>, /#pick/<day>, /#grocery.
 - Siri: POST /api/lists/{grocery|todo}/quick-add {text} splits on commas/"and", skips duplicates, returns {message} for Siri to speak.
 - Phones: http://machouse.local:8000 (or http://192.168.1.2:8000); `?kiosk` adds night-mode blanking + auto-return to Home.
 - Linger enabled (`loginctl enable-linger ahmckeit`), so the user service runs even with no login session.
@@ -83,7 +84,7 @@ We must be able to add/check off to-dos and set meals from our phones on the hom
   nightly backup of data/dashboard.db; optional PIN; Google Calendar API if iCal delay is annoying.
 - Roadmap (agreed order):
   1. Siri Shortcut: "Hey Siri, add X to groceries" -> POST /api/lists/grocery over Tailscale (no app changes needed).
-  2. Recipe box (structured ingredients; import from photos via AI or links) -> pick recipes per day in Meals -> button builds weekly grocery list (merge duplicates, skip pantry staples).
+  2. DONE 2026-11-16: recipe box + recipe picking in Meals + weekly grocery list builder. Follow-up: Kaitlyn to review 7 flagged recipes; existing plan entries (Nov 16–20) are plain text, not linked to recipes.
   3. Common-item suggestions on Groceries from purchase history (frequency/interval of items added/checked; no AI).
   4. AI voice commands from the phone page ("add milk, tacos on Thursday"); wall-screen voice later would need a USB mic.
 - Possible side business: install script + per-household settings in .env (location, names) so a family member's unit is quick to build.
