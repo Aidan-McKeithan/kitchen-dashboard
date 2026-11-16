@@ -182,6 +182,38 @@ input:focus, textarea:focus { border-color: var(--blue); }
 code { background: var(--panel); padding: 0.15rem 0.4rem; border-radius: 0.4rem; font-size: 0.9em; overflow-wrap: anywhere; }
 .recipe { white-space: pre-wrap; line-height: 1.5; }
 
+/* ---------- month calendar ---------- */
+.month-card { padding: 0.9rem; }
+.month-nav { display: flex; align-items: center; gap: 0.3rem; margin-bottom: 0.6rem; }
+.month-nav h3 { margin: 0; font-size: 1.2rem; min-width: 9.5rem; text-align: center; }
+.month-nav .spacer { flex: 1; }
+.month { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 0.25rem; }
+.dow { text-align: center; font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; padding-bottom: 0.2rem; }
+.mday {
+  background: var(--panel); border: 2px solid transparent; border-radius: 0.6rem;
+  min-height: 5.6rem; padding: 0.3rem; display: flex; flex-direction: column; gap: 0.15rem;
+  align-items: stretch; text-align: left; cursor: pointer; overflow: hidden; min-width: 0;
+}
+.mday .num { font-size: 0.85rem; font-weight: 600; width: 1.6rem; height: 1.6rem; display: grid; place-items: center; border-radius: 50%; }
+.mday.out { opacity: 0.4; }
+.mday.today .num { background: var(--blue); color: #0b1220; }
+.mday.sel { border-color: var(--title); }
+.chip { display: flex; align-items: center; gap: 0.25rem; font-size: 0.68rem; line-height: 1.25; min-width: 0; }
+.chip i { width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--c); flex: none; }
+.chip .t { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chip.allday { background: color-mix(in srgb, var(--c) 30%, transparent); border-radius: 0.3rem; padding: 0.05rem 0.25rem; }
+.chip.allday i { display: none; }
+.more-chip { color: var(--muted); }
+/* Phones: cells are too narrow for titles, so show just colored dots. */
+@media (max-width: 520px) {
+  .mday { min-height: 3.4rem; flex-direction: row; flex-wrap: wrap; align-content: flex-start; gap: 0.15rem; padding: 0.2rem; }
+  .mday .num { width: 100%; height: 1.4rem; font-size: 0.8rem; border-radius: 0.4rem; }
+  .chip .t, .more-chip { display: none; }
+  .chip.allday { background: none; padding: 0; }
+  .chip.allday i { display: block; }
+  .month-nav h3 { min-width: 0; font-size: 1.05rem; }
+}
+
 /* ---------- tab bar ---------- */
 .tabs {
   display: flex; justify-content: space-around;

@@ -195,8 +195,15 @@ async def get_weather():
 
 
 @app.get("/api/events")
-async def get_events(days: int = 30):
-    return await calendars.get_events(max(1, min(days, 90)))
+async def get_events(days: int = 30, start: str | None = None):
+    """Events from `start` (YYYY-MM-DD, default today) for `days` days."""
+    first = None
+    if start:
+        try:
+            first = dt.date.fromisoformat(start)
+        except ValueError:
+            raise HTTPException(400, "start must be YYYY-MM-DD")
+    return await calendars.get_events(max(1, min(days, 90)), first)
 
 
 @app.get("/api/calendars")

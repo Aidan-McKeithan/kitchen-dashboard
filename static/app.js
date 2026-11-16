@@ -16,6 +16,10 @@ const $ = (sel, el = document) => el.querySelector(sel);
 const state = {
   tab: "home",
   listTab: "todo",
+  calMode: "month",                                   // "month" or "week"
+  calMonth: new Date(new Date().getFullYear(), new Date().getMonth(), 1),
+  calSelected: null,                                  // YYYY-MM-DD picked in the month grid
+  monthEvents: { key: null, events: [] },             // events for the month on screen
   weather: null,
   events: [],
   calendars: [],
@@ -80,6 +84,8 @@ const ICONS = {
   x: '<path d="M18 6 6 18M6 6l12 12"/>',
   trash: '<path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/>',
   edit: '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 1 1 3 3L7 19l-4 1 1-4Z"/>',
+  left: '<path d="m15 18-6-6 6-6"/>',
+  right: '<path d="m9 18 6-6-6-6"/>',
 };
 const icon = (name, cls = "") => `<svg class="ico ${cls}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[name]}</svg>`;
 
@@ -152,9 +158,21 @@ async function pollRev() {
 const evStart = (e) => new Date(e.all_day ? e.start.slice(0, 10) + "T00:00" : e.start);
 const evEnd = (e) => new Date(e.all_day ? e.end.slice(0, 10) + "T00:00" : e.end);
 
-function eventsOnDay(day) {
+function eventsOnDay(day, list = state.events) {
   const s = startOfDay(day), n = addDays(s, 1);
-  return state.events.filter((e) => evStart(e) < n && (evEnd(e) > s || evStart(e) >= s));
+  return list.filter((e) => evStart(e) < n && (evEnd(e) > s || evStart(e) >= s));
+}
+
+// Month grid always shows 6 weeks starting on the Sunday on/before the 1st.
+const monthKey = (m) => `${m.getFullYear()}-${pad(m.getMonth() + 1)}`;
+const gridStart = (m) => addDays(m, -m.getDay());
+
+async function loadMonth() {
+  const key = monthKey(state.calMonth);
+  try {
+    const events = await api(`/api/events?start=${isoDay(gridStart(state.calMonth))}&days=42`);
+    if (key === monthKey(state.calMonth)) state.monthEvents = { key, events }; // ignore if user moved on
+  } catch (e) { console.warn("month", e); }
 }
 
 function evTimeText(e) {
@@ -291,26 +309,73 @@ function homeView() {
 }
 
 // ---------- rendering: other tabs ----------
+// One day's events as a card (used by Week view and the Month "selected day" panel).
+function dayCard(d, evs) {
+  const w = state.weather?.daily?.find((x) => x.date === isoDay(d));
+  const diff = Math.round((startOfDay(d) - startOfDay(new Date())) / 86400000);
+  const label = dayLabel(d) + (diff >= 2 && diff < 7 ? " · " + d.toLocaleDateString(LOCALE, { month: "short", day: "numeric" }) : "");
+  const wtxt = w ? ` <span class="muted" style="text-transform:none;letter-spacing:0">${wxIcon(wx(w.code).kind)} ${w.hi}°/${w.lo}°</span>` : "";
+  return `<section class="card"><div class="day-h">${esc(label)}${wtxt}</div>
+    ${evs.map((e) => `
+      <div class="ev"><div class="ev-bar" style="background:${esc(e.color)}"></div>
+        <div class="ev-main"><div class="ev-title">${esc(e.title)}</div>
+        <div class="ev-sub">${esc(evTimeText(e))}${e.all_day ? "" : " – " + esc(fmtTime(evEnd(e)))} · ${esc(e.calendar)}${e.location ? " · " + esc(e.location) : ""}</div></div></div>`).join("")
+    || `<div class="empty">No events</div>`}</section>`;
+}
+
+function weekView() {
+  const today = startOfDay(new Date());
+  let out = "";
+  for (let i = 0; i < 7; i++) { const d = addDays(today, i); out += dayCard(d, eventsOnDay(d)); }
+  return out;
+}
+
+function monthView() {
+  const m = state.calMonth, key = monthKey(m);
+  if (state.monthEvents.key !== key) {
+    loadMonth().then(() => { if (state.tab === "calendar") render(); });
+  }
+  const evList = state.monthEvents.key === key ? state.monthEvents.events : [];
+  const todayKey = isoDay(new Date());
+  const sel = state.calSelected || (monthKey(new Date()) === key ? todayKey : isoDay(m));
+  const start = gridStart(m);
+  let cells = "";
+  for (let i = 0; i < 42; i++) {
+    const d = addDays(start, i), k = isoDay(d), evs = eventsOnDay(d, evList);
+    const cls = [d.getMonth() !== m.getMonth() && "out", k === todayKey && "today", k === sel && "sel"].filter(Boolean).join(" ");
+    cells += `<button class="mday ${cls}" data-action="pick-day" data-day="${k}">
+      <span class="num">${d.getDate()}</span>
+      ${evs.slice(0, 3).map((e) => `<span class="chip ${e.all_day ? "allday" : ""}" style="--c:${esc(e.color)}"><i></i><span class="t">${esc(e.title)}</span></span>`).join("")}
+      ${evs.length > 3 ? `<span class="chip more-chip">+${evs.length - 3}</span>` : ""}
+    </button>`;
+  }
+  const dows = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((x) => `<div class="dow">${x}</div>`).join("");
+  const selDate = new Date(sel + "T00:00");
+  return `
+    <section class="card month-card">
+      <div class="month-nav">
+        <button class="icon-btn" data-action="month-prev" aria-label="Previous month">${icon("left")}</button>
+        <h3>${esc(m.toLocaleDateString(LOCALE, { month: "long", year: "numeric" }))}</h3>
+        <button class="icon-btn" data-action="month-next" aria-label="Next month">${icon("right")}</button>
+        <span class="spacer"></span>
+        <button class="btn" data-action="month-today">Today</button>
+      </div>
+      <div class="month">${dows}${cells}</div>
+    </section>
+    ${dayCard(selDate, eventsOnDay(selDate, evList))}`;
+}
+
 function calendarView() {
   const legend = state.calendars.map((c) =>
     `<span><i style="background:${esc(c.color)}"></i>${esc(c.name)}${c.ok ? "" : ' <small class="muted">(offline)</small>'}</span>`).join("");
-  const today = startOfDay(new Date());
-  let days = "";
-  for (let i = 0; i < 31; i++) {
-    const d = addDays(today, i);
-    const evs = eventsOnDay(d);
-    const w = state.weather?.daily?.find((x) => x.date === isoDay(d));
-    if (!evs.length && i > 0 && !w) continue;
-    if (!evs.length && i > 6) continue;
-    const wtxt = w ? ` <span class="muted" style="text-transform:none;letter-spacing:0">${wxIcon(wx(w.code).kind)} ${w.hi}°/${w.lo}°</span>` : "";
-    days += `<section class="card"><div class="day-h">${esc(dayLabel(d))}${i > 1 && i < 7 ? " · " + d.toLocaleDateString(LOCALE, { month: "short", day: "numeric" }) : ""}${wtxt}</div>
-      ${evs.map((e) => `
-        <div class="ev"><div class="ev-bar" style="background:${esc(e.color)}"></div>
-          <div class="ev-main"><div class="ev-title">${esc(e.title)}</div>
-          <div class="ev-sub">${esc(evTimeText(e))}${e.all_day ? "" : " – " + esc(fmtTime(evEnd(e)))} · ${esc(e.calendar)}${e.location ? " · " + esc(e.location) : ""}</div></div></div>`).join("")
-      || `<div class="empty">No events</div>`}</section>`;
-  }
-  return `<div class="page-h"><h2>Calendar</h2><div class="legend">${legend}</div></div>${days}`;
+  const mode = state.calMode;
+  return `<div class="page-h"><h2>Calendar</h2>
+      <div class="seg">
+        <button class="${mode === "month" ? "on" : ""}" data-action="cal-mode" data-mode="month">Month</button>
+        <button class="${mode === "week" ? "on" : ""}" data-action="cal-mode" data-mode="week">Week</button>
+      </div></div>
+    <div class="legend">${legend}</div>
+    ${mode === "month" ? monthView() : weekView()}`;
 }
 
 function listsView() {
@@ -463,6 +528,28 @@ document.addEventListener("click", (ev) => {
     case "delete-item": act(() => api(`/api/items/${id}`, { method: "DELETE" })); break;
     case "clear-done": act(() => api(`/api/lists/${list}/clear-done`, { method: "POST" })); break;
     case "list-tab": state.listTab = list; render(); break;
+    case "cal-mode": state.calMode = el.dataset.mode; render(); break;
+    case "pick-day": {
+      state.calSelected = day;
+      const d = new Date(day + "T00:00");
+      if (d.getMonth() !== state.calMonth.getMonth()) state.calMonth = new Date(d.getFullYear(), d.getMonth(), 1);
+      render();
+      break;
+    }
+    case "month-prev": case "month-next": {
+      const m = state.calMonth;
+      state.calMonth = new Date(m.getFullYear(), m.getMonth() + (action === "month-next" ? 1 : -1), 1);
+      state.calSelected = null;
+      render();
+      break;
+    }
+    case "month-today": {
+      const n = new Date();
+      state.calMonth = new Date(n.getFullYear(), n.getMonth(), 1);
+      state.calSelected = null;
+      render();
+      break;
+    }
     case "edit-meal": mealEditor(day); break;
     case "recipe": recipeView(day); break;
     case "clear-meal": closeModal(); act(() => api(`/api/meals/${day}`, { method: "DELETE" })); break;
@@ -533,6 +620,8 @@ document.querySelectorAll(".tabs button").forEach((b) => {
 });
 
 (async function start() {
+  const startTab = location.hash.slice(1); // e.g. /#calendar opens that tab
+  if (VIEWS[startTab]) state.tab = startTab;
   renderClock();
   setInterval(() => { renderClock(); updateNight(); }, 1000);
   render();
@@ -540,7 +629,7 @@ document.querySelectorAll(".tabs button").forEach((b) => {
   render();
   setInterval(pollRev, 4000);
   setInterval(async () => { await loadWeather(); render(); }, 10 * 60 * 1000);
-  setInterval(async () => { await loadEvents(); render(); }, 5 * 60 * 1000);
+  setInterval(async () => { await Promise.all([loadEvents(), loadMonth()]); render(); }, 5 * 60 * 1000);
   // At midnight "today" changes — redraw everything.
   let lastDay = isoDay(new Date());
   setInterval(() => { const d = isoDay(new Date()); if (d !== lastDay) { lastDay = d; loadMeals().then(render); } }, 30000);

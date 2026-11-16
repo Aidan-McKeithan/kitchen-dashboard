@@ -84,10 +84,12 @@ def _events_for(c: dict, start: dt.datetime, end: dt.datetime) -> list[dict]:
     return out
 
 
-async def get_events(days: int) -> list[dict]:
+async def get_events(days: int, first: dt.date | None = None) -> list[dict]:
     async with httpx.AsyncClient(timeout=15) as client:
         await asyncio.gather(*(_refresh(client, c) for c in CALENDARS))
-    today = dt.datetime.now(TZ).replace(hour=0, minute=0, second=0, microsecond=0)
+    if first is None:
+        first = dt.datetime.now(TZ).date()
+    today = dt.datetime.combine(first, dt.time(), TZ)
     end = today + dt.timedelta(days=days)
     events = []
     for c in CALENDARS:
