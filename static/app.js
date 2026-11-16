@@ -351,7 +351,7 @@ function monthView() {
   }
   const dows = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((x) => `<div class="dow">${x}</div>`).join("");
   const selDate = new Date(sel + "T00:00");
-  return `
+  return `<div class="cal-split">
     <section class="card month-card">
       <div class="month-nav">
         <button class="icon-btn" data-action="month-prev" aria-label="Previous month">${icon("left")}</button>
@@ -362,7 +362,7 @@ function monthView() {
       </div>
       <div class="month">${dows}${cells}</div>
     </section>
-    ${dayCard(selDate, eventsOnDay(selDate, evList))}`;
+    ${dayCard(selDate, eventsOnDay(selDate, evList))}</div>`;
 }
 
 function calendarView() {

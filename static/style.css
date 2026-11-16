@@ -23,6 +23,7 @@
 html { font-size: clamp(15px, 2.2vw, 26px); }
 @media (orientation: landscape) and (min-width: 1000px) {
   html { font-size: clamp(15px, 1.25vw, 26px); }
+  body #app { max-width: none; } /* use the whole wall screen ("body" makes this beat the #app rule below) */
 }
 
 * { box-sizing: border-box; }
@@ -64,8 +65,15 @@ button, input, textarea, select { font: inherit; color: inherit; }
 .span2 { grid-column: 1 / -1; }
 @media (max-width: 520px) { .grid, .home { grid-template-columns: 1fr; grid-template-rows: none; } .home { flex: none; } }
 @media (orientation: landscape) and (min-width: 1000px) {
-  .home { grid-template-columns: 1fr 1fr 1fr; grid-template-rows: auto 1fr; }
-  .home .upcoming { grid-column: auto; }
+  /* Landscape home: To-do runs the full height on the right.
+     Card order in the HTML: weather, schedule, todo, dinner, upcoming. */
+  .home { grid-template-columns: 1fr 1fr 1fr; grid-template-rows: auto 1fr;
+          grid-template-areas: "w s t" "d u t"; }
+  .home > :nth-child(1) { grid-area: w; }
+  .home > :nth-child(2) { grid-area: s; }
+  .home > :nth-child(3) { grid-area: t; }
+  .home > :nth-child(4) { grid-area: d; }
+  .home > :nth-child(5) { grid-area: u; }
 }
 
 .card {
@@ -204,6 +212,14 @@ code { background: var(--panel); padding: 0.15rem 0.4rem; border-radius: 0.4rem;
 .chip.allday { background: color-mix(in srgb, var(--c) 30%, transparent); border-radius: 0.3rem; padding: 0.05rem 0.25rem; }
 .chip.allday i { display: none; }
 .more-chip { color: var(--muted); }
+.cal-split { display: flex; flex-direction: column; gap: var(--gap); }
+/* Wide screens (landscape wall display): selected-day panel sits beside the
+   grid, and the 6 week-rows shrink to fit the screen height (~21rem is the
+   header, tabs and calendar controls). */
+@media (orientation: landscape) and (min-width: 1000px) {
+  .cal-split { display: grid; grid-template-columns: 2.6fr 1fr; align-items: start; }
+  .mday { min-height: max(3.2rem, calc((100dvh - 24rem) / 6)); }
+}
 /* Phones: cells are too narrow for titles, so show just colored dots. */
 @media (max-width: 520px) {
   .mday { min-height: 3.4rem; flex-direction: row; flex-wrap: wrap; align-content: flex-start; gap: 0.15rem; padding: 0.2rem; }

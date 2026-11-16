@@ -67,7 +67,7 @@ We must be able to add/check off to-dos and set meals from our phones on the hom
 - Calendars + location live in `.env` (gitignored): CAL<n>_NAME / CAL<n>_COLOR / CAL<n>_URL. Configured: CAL1 Aidan (blue), CAL2 Holidays (green), CAL3 Kaitlyn (pink), CAL4 Aidan Events (purple; shared "Aidan Events / To-Do" calendar Kaitlyn manages).
 - Server: systemd *user* service `kitchen-dashboard` (deploy/kitchen-dashboard.service, symlinked into ~/.config/systemd/user). `systemctl --user restart kitchen-dashboard` after backend changes; front-end changes just need a page reload.
 - Kiosk: ~/.config/labwc/autostart (copy of deploy/labwc-autostart) runs deploy/kiosk.sh via lwrespawn → Chromium `--kiosk --ozone-platform=wayland --password-store=basic` at http://localhost:8000/?kiosk. (Without --password-store=basic Chromium hangs on the keyring; without --ozone-platform=wayland it fails looking for X11.)
-- Display rotated to portrait: ~/.config/kanshi/config (copy of deploy/kanshi.config), transform 90.
+- Display orientation: currently LANDSCAPE (waiting on a vertical mount). Switch with `deploy/rotate.sh portrait` or `deploy/rotate.sh landscape` — copies deploy/kanshi.<mode>.config to ~/.config/kanshi/config and applies it live. Portrait = transform 90 (use 270 if upside-down). The page layout adapts automatically to either.
 - MagicMirror: stopped in pm2 (`pm2 stop MagicMirror && pm2 save`). Fallback: `pm2 start MagicMirror`.
 - Phones: http://machouse.local:8000 (or http://192.168.1.2:8000); `?kiosk` adds night-mode blanking + auto-return to Home.
 - Linger enabled (`loginctl enable-linger ahmckeit`), so the user service runs even with no login session.
