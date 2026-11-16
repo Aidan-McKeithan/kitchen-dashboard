@@ -89,6 +89,46 @@ def add_item(name: str, item: ItemIn):
     return {"id": cur.lastrowid}
 
 
+class QuickAddIn(BaseModel):
+    text: str = Field(min_length=1, max_length=500)
+
+
+# Split spoken/typed text like "milk, eggs and bread" into separate items.
+# (Trade-off: "mac and cheese" becomes two items; easy to fix on the list.)
+_SPLIT = re.compile(r"\s*(?:,|;|\n|\band\b)\s*", re.I)
+LIST_LABELS = {"grocery": "groceries", "todo": "your to-do list"}
+
+
+@app.post("/api/lists/{name}/quick-add")
+def quick_add(name: str, body: QuickAddIn):
+    """For Siri Shortcuts: add several items from one sentence, reply with a sentence Siri can speak."""
+    _check_list(name)
+    existing = {r["text"].lower() for r in db.query("SELECT text FROM items WHERE list = ? AND done = 0", (name,))}
+    added, skipped = [], []
+    for part in _SPLIT.split(body.text)[:20]:
+        item = part.strip(" .!?").strip()
+        if not item:
+            continue
+        item = item[0].upper() + item[1:]
+        if item.lower() in existing:
+            skipped.append(item.lower())
+            continue
+        db.write("INSERT INTO items(list, text) VALUES (?, ?)", (name, item[:200]))
+        existing.add(item.lower())
+        added.append(item.lower())
+
+    def join(xs):
+        return xs[0] if len(xs) == 1 else ", ".join(xs[:-1]) + " and " + xs[-1]
+
+    label = LIST_LABELS.get(name, f"the {name} list")
+    msg = []
+    if added:
+        msg.append(f"Added {join(added)} to {label}.")
+    if skipped:
+        msg.append(f"{join(skipped).capitalize()} {'was' if len(skipped) == 1 else 'were'} already on it.")
+    return {"added": added, "skipped": skipped, "message": " ".join(msg) or "I didn't catch anything to add."}
+
+
 @app.patch("/api/items/{item_id}")
 def update_item(item_id: int, patch: ItemPatch):
     if patch.done is not None:
