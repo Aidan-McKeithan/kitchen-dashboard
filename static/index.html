@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kitchen Dashboard</title>
+  <meta name="theme-color" content="#111827">
+  <!-- "Add to Home Screen" support (phones open it like an app) -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Kitchen">
+  <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/static/icon-180.png">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="top">
+      <div>
+        <h1 id="greeting">Hello!</h1>
+        <div id="date" class="muted"></div>
+      </div>
+      <div class="clock"><span id="time"></span><span id="ampm" class="muted"></span></div>
+    </header>
+
+    <main id="view"></main>
+
+    <nav class="tabs">
+      <button data-tab="home"></button>
+      <button data-tab="calendar"></button>
+      <button data-tab="lists"></button>
+      <button data-tab="meals"></button>
+      <button data-tab="settings"></button>
+    </nav>
+  </div>
+
+  <div id="modal" hidden></div>
+  <div id="night" hidden><div id="night-clock"></div></div>
+  <div id="toast" hidden></div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
