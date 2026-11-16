@@ -70,3 +70,5 @@ We must be able to add/check off to-dos and set meals from our phones on the hom
 - Display rotated to portrait: ~/.config/kanshi/config (copy of deploy/kanshi.config), transform 90.
 - MagicMirror: stopped in pm2 (`pm2 stop MagicMirror && pm2 save`). Fallback: `pm2 start MagicMirror`.
 - Phones: http://machouse.local:8000 (or http://192.168.1.2:8000); `?kiosk` adds night-mode blanking + auto-return to Home.
+- Linger enabled (`loginctl enable-linger ahmckeit`), so the user service runs even with no login session.
+- Tailscale installed on the Pi (MagicDNS on). Away access: http://machouse:8000 (Tailscale IP 100.77.138.81). Fiancée to be invited to the tailnet later.
