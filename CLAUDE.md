@@ -79,5 +79,10 @@ We must be able to add/check off to-dos and set meals from our phones on the hom
 - Switch to portrait when the vertical mount arrives (`deploy/rotate.sh portrait`).
 - Ideas queued: recipe box + pick recipes in Meals + auto-generate weekly grocery list (ask what format Kaitlyn's recipe book is: physical/app/links);
   nightly backup of data/dashboard.db; optional PIN; Google Calendar API if iCal delay is annoying.
+- Roadmap (agreed order):
+  1. Siri Shortcut: "Hey Siri, add X to groceries" -> POST /api/lists/grocery over Tailscale (no app changes needed).
+  2. Recipe box (structured ingredients; import from photos via AI or links) -> pick recipes per day in Meals -> button builds weekly grocery list (merge duplicates, skip pantry staples).
+  3. Common-item suggestions on Groceries from purchase history (frequency/interval of items added/checked; no AI).
+  4. AI voice commands from the phone page ("add milk, tacos on Thursday"); wall-screen voice later would need a USB mic.
 - Possible side business: install script + per-household settings in .env (location, names) so a family member's unit is quick to build.
 - Tailscale: Kaitlyn's phone (iphone-13) joined via auth key, listed under Aidan's account.
