@@ -522,9 +522,7 @@
    "notes": "I add in dijon, yellow mustard, relish & salt to my preferred taste.",
    "pairs_with": [],
    "photo": "20261116-154154-08ecdf.jpg",
-   "check": [
-    "The table of contents section for this one is scribbled out — is it Dinner, Lunch or Dip?"
-   ]
+   "check": []
   },
   {
    "id": "chicken-noodle-soup",
@@ -622,9 +620,7 @@
    "notes": "",
    "pairs_with": [],
    "photo": "20261116-154152-583e44.jpg",
-   "check": [
-    "Olive oil and parsley say 'tbsp' with no number — I assumed 1 tbsp each."
-   ]
+   "check": []
   },
   {
    "id": "philly-cheesesteaks",
@@ -1086,10 +1082,7 @@
    "notes": "",
    "pairs_with": [],
    "photo": "20261116-154052-6c5354.jpg",
-   "check": [
-    "Step 6: the second oven temperature is written over — 475°F or 485°F?",
-    "Step 8 reads 'slice & freeze in 7 days' — meaning freeze within 7 days?"
-   ]
+   "check": []
   },
   {
    "id": "sandwich-sourdough-loaf",
@@ -1153,7 +1146,7 @@
     },
     {
      "qty": "1",
-     "unit": "tsp",
+     "unit": "tbsp",
      "item": "chili oil",
      "note": "",
      "optional": false
@@ -1205,9 +1198,7 @@
    "notes": "",
    "pairs_with": [],
    "photo": "20261116-154050-c7f7e5.jpg",
-   "check": [
-    "Chili oil looks like it was changed between tsp and tbsp — which is right?"
-   ]
+   "check": []
   },
   {
    "id": "chicken-alfredo",
@@ -2116,9 +2107,7 @@
    "notes": "",
    "pairs_with": [],
    "photo": "20261116-153805-b1eca8.jpg",
-   "check": [
-    "Salt is written over — 1/4 tsp or 1/2 tsp?"
-   ]
+   "check": []
   },
   {
    "id": "chicken-gravy",
@@ -2217,9 +2206,193 @@
    "notes": "",
    "pairs_with": [],
    "photo": "20261116-153758-c5fab1.jpg",
-   "check": [
-    "Chicken base: the '1' has a flourish — 1 tbsp or 2 tbsp?"
-   ]
+   "check": []
+  },
+  {
+   "id": "tomato-soup",
+   "pairs_with": [],
+   "photo": null,
+   "check": [],
+   "title": "Tomato soup",
+   "section": "Dinner",
+   "page": null,
+   "serves": "4-6",
+   "prep_min": 15,
+   "cook_min": 25,
+   "ingredients": [
+    {
+     "qty": "3",
+     "unit": "tbsp",
+     "item": "olive oil",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "",
+     "item": "Large onion",
+     "note": "diced",
+     "optional": false
+    },
+    {
+     "qty": "3",
+     "unit": "",
+     "item": "medium carrots",
+     "note": "diced",
+     "optional": false
+    },
+    {
+     "qty": "4",
+     "unit": "clove",
+     "item": "garlic",
+     "note": "chopped",
+     "optional": false
+    },
+    {
+     "qty": "4",
+     "unit": "tbsp",
+     "item": "tomato paste",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "cup",
+     "item": "fresh basil leaves",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "tsp",
+     "item": "fresh thyme leaves",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1-28",
+     "unit": "oz",
+     "item": "can crushed tomatoes",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "cup",
+     "item": "chicken broth",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "cup",
+     "item": "heavy cream or milk",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "",
+     "unit": "",
+     "item": "Salt & pepper to taste",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "heat olive oil, cook the onion and carrots.",
+    "stir in garlic, tomato paste, cook for 2 minutes.",
+    "Add basil, thyme, crushed tomatoes, broth, and stir. Bring to a boil, cover with lid slightly, then reduce to a simmer for 15 minutes.",
+    "blend until smooth and creamy",
+    "Stir in cream or milk, cook over medium heat, season to taste"
+   ],
+   "notes": "Pair with grilled chicken breast and a sourdough grilled cheese sandwich"
+  },
+  {
+   "id": "brunswick-stew",
+   "pairs_with": [],
+   "photo": null,
+   "check": [],
+   "title": "Brunswick Stew",
+   "section": "Dinner",
+   "page": null,
+   "serves": null,
+   "prep_min": null,
+   "cook_min": null,
+   "ingredients": [
+    {
+     "qty": "2",
+     "unit": "",
+     "item": "Whole chickens",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1",
+     "unit": "can",
+     "item": "- 29 oz can tomato puree",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "6",
+     "unit": "can",
+     "item": "- 15 oz whole potatoes",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "4",
+     "unit": "can",
+     "item": "- 14.5 oz green beans",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "4",
+     "unit": "can",
+     "item": "- 11 oz corn",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "4",
+     "unit": "can",
+     "item": "- 15 oz butter beans",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "5",
+     "unit": "tbsp",
+     "item": "salt",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "2",
+     "unit": "tbsp",
+     "item": "pepper",
+     "note": "",
+     "optional": false
+    },
+    {
+     "qty": "1/4",
+     "unit": "tbsp",
+     "item": "cayenne pepper",
+     "note": "",
+     "optional": false
+    }
+   ],
+   "steps": [
+    "Add 2 whole chickens fully submerged in water, remove when 165°",
+    "Leave 1/3 of chicken broth in the pot",
+    "Add tomato puree",
+    "Add potatoes, boil for 20-30 minutes",
+    "Add remaining vegetables to boil for 20-30 minutes",
+    "shred chicken",
+    "add in seasonings, re-add the chicken, cook until cooked down"
+   ],
+   "notes": "Pair with corn bread"
   }
  ]
 }
